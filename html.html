@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RideNova - Premium Bike Rentals</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Preloader -->
+    <div id="preloader" class="preloader">
+        <div class="loader">
+            <i class="fas fa-bicycle spinner"></i>
+            <h3>Loading RideNova...</h3>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <i class="fas fa-bicycle logo-icon"></i>
+                <span class="logo-text">RideNova</span>
+            </div>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="#home" class="nav-link">Home</a></li>
+                <li><a href="#bikes" class="nav-link">Bikes</a></li>
+                <li><a href="#features" class="nav-link">Features</a></li>
+                <li><a href="#pricing" class="nav-link">Pricing</a></li>
+                <li><a href="#about" class="nav-link">About</a></li>
+                <li><a href="#contact" class="nav-link">Contact</a></li>
+                <li><a href="#" class="btn-login">Login</a></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()"><i class="fas fa-moon"></i></button></li>
+            </ul>
+            <div class="hamburger" id="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-bg-animation"></div>
+        <div class="hero-container">
+            <div class="hero-content" data-aos="fade-up">
+                <div class="hero-badge">
+                    <i class="fas fa-star"></i>
+                    <span>#1 Bike Rental App</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-main">Ride the</span>
+                    <span class="title-accent">Future</span>
+                </h1>
+                <p class="hero-subtitle">Experience premium bike rentals with cutting-edge AI technology, smart locks, and seamless mobile integration</p>
+                <div class="hero-features">
+                    <div class="mini-feature">
+                        <i class="fas fa-bolt"></i>
+                        <span>Smart Unlock</span>
+                    </div>
+                    <div class="mini-feature">
+                        <i class="fas fa-map-marked-alt"></i>
+                        <span>GPS Tracking</span>
+                    </div>
+                    <div class="mini-feature">
+                        <i class="fas fa-shield-alt"></i>
+                        <span>Insurance Included</span>
+                    </div>
+                </div>
+                <div class="hero-buttons">
+                    <button class="btn-primary" onclick="openBookingModal()">
+                        <i class="fas fa-play"></i>
+                        Book Your Ride
+                    </button>
+                    <button class="btn-secondary" onclick="startVirtualTour()">
+                        <i class="fas fa-eye"></i>
+                        Virtual Tour
+                    </button>
+                </div>
+                <div class="hero-stats-mini">
+                    <div class="stat-mini">
+                        <span class="stat-number" data-target="25000">0</span>
+                        <span class="stat-label">Happy Riders</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-number" data-target="1200">0</span>
+                        <span class="stat-label">Premium Bikes</span>
+                    </div>
+                    <div class="stat-mini">
+                        <span class="stat-number" data-target="100">0</span>
+                        <span class="stat-label">Cities</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-image" data-aos="fade-left">
+                <div class="bike-showcase">
+                    <div class="bike-3d">
+                        <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=400&fit=crop" alt="Premium E-Bike" class="bike-main">
+                    </div>
+                    <div class="floating-elements">
+                        <div class="floating-icon" style="top: 20%; left: 10%;">
+                            <i class="fas fa-bolt"></i>
+                        </div>
+                        <div class="floating-icon" style="top: 60%; right: 15%;">
+                            <i class="fas fa-wifi"></i>
+                        </div>
+                        <div class="floating-icon" style="bottom: 30%; left: 20%;">
+                            <i class="fas fa-leaf"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Enhanced Stats Section -->
+        <div class="hero-stats">
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="stat-icon">
+                    <i class="fas fa-users"></i>
+                </div>
+                <span class="stat-number" data-target="50000">0</span>
+                <span class="stat-label">Happy Customers</span>
+                <span class="stat-growth">+25% this month</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-icon">
+                    <i class="fas fa-bicycle"></i>
+                </div>
+                <span class="stat-number" data-target="2500">0</span>
+                <span class="stat-label">Premium Bikes</span>
+                <span class="stat-growth">Latest Models</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="stat-icon">
+                    <i class="fas fa-map-marker-alt"></i>
+                </div>
+                <span class="stat-number" data-target="150">0</span>
+                <span class="stat-label">City Locations</span>
+                <span class="stat-growth">Expanding Daily</span>
+            </div>
+            <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="stat-icon">
+                    <i class="fas fa-leaf"></i>
+                </div>
+                <span class="stat-number" data-target="1000">0</span>
+                <span class="stat-label">Tons CO2 Saved</span>
+                <span class="stat-growth">Eco Friendly</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Advanced Search Bar -->
+    <section class="search-section">
+        <div class="search-container">
+            <div class="search-card" data-aos="fade-up">
+                <div class="search-header">
+                    <h3>Find Your Perfect Ride</h3>
+                    <p>Advanced search with real-time availability</p>
+                </div>
+                <div class="search-form">
+                    <div class="search-item">
+                        <div class="search-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div class="search-input">
+                            <label>Pickup Location</label>
+                            <select id="pickup-location">
+                                <option value="">Select Location</option>
+                                <option>Delhi - Connaught Place</option>
+                                <option>Mumbai - Bandra West</option>
+                                <option>Bangalore - MG Road</option>
+                                <option>Pune - Koregaon Park</option>
+                                <option>Hyderabad - Hitech City</option>
+                                <option>Chennai - T. Nagar</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <div class="search-icon">
+                            <i class="fas fa-calendar-alt"></i>
+                        </div>
+                        <div class="search-input">
+                            <label>Pickup Date</label>
+                            <input type="date" id="pickup-date">
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <div class="search-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="search-input">
+                            <label>Pickup Time</label>
+                            <input type="time" id="pickup-time">
+                        </div>
+                    </div>
+                    <div class="search-item">
+                        <div class="search-icon">
+                            <i class="fas fa-bicycle"></i>
+                        </div>
+                        <div class="search-input">
+                            <label>Bike Type</label>
+                            <select id="bike-type">
+                                <option value="">Any Type</option>
+                                <option>Electric Bike</option>
+                                <option>Mountain Bike</option>
+                                <option>City Bike</option>
+                                <option>Hybrid Bike</option>
+                                <option>Sports Bike</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="search-btn" onclick="performAdvancedSearch()">
+                        <i class="fas fa-search"></i>
+                        <span>Search Bikes</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Live Map Section -->
+    <section class="map-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Live Bike Availability</h2>
+                <p>Real-time tracking of available bikes near you</p>
+            </div>
+            <div class="map-container" data-aos="fade-up">
+                <div class="live-map">
+                    <div class="map-placeholder">
+                        <div class="map-overlay">
+                            <i class="fas fa-map"></i>
+                            <h4>Interactive Live Map</h4>
+                            <p>Real-time bike locations and availability</p>
+                        </div>
+                        <div class="bike-markers">
+                            <div class="marker available pulse" style="top: 25%; left: 35%;" data-bikes="8">
+                                <i class="fas fa-bicycle"></i>
+                                <span class="marker-tooltip">Connaught Place - 8 bikes available</span>
+                            </div>
+                            <div class="marker available pulse" style="top: 55%; left: 65%;" data-bikes="5">
+                                <i class="fas fa-bicycle"></i>
+                                <span class="marker-tooltip">Khan Market - 5 bikes available</span>
+                            </div>
+                            <div class="marker busy pulse" style="top: 75%; left: 25%;" data-bikes="2">
+                                <i class="fas fa-bicycle"></i>
+                                <span class="marker-tooltip">India Gate - 2 bikes available</span>
+                            </div>
+                            <div class="marker available pulse" style="top: 40%; right: 20%;" data-bikes="12">
+                                <i class="fas fa-bicycle"></i>
+                                <span class="marker-tooltip">Select City Walk - 12 bikes available</span>
+                            </div>
+                        </div>
+                        <div class="map-controls-overlay">
+                            <button class="map-control-btn" onclick="centerMap()">
+                                <i class="fas fa-crosshairs"></i>
+                            </button>
+                            <button class="map-control-btn" onclick="toggleMapView()">
+                                <i class="fas fa-layer-group"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="map-sidebar">
+                    <div class="map-filters">
+                        <h4>Filter Bikes</h4>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="all">
+                                <i class="fas fa-bicycle"></i>
+                                All Bikes
+                            </button>
+                            <button class="filter-btn" data-filter="available">
+                                <i class="fas fa-check-circle"></i>
+                                Available
+                            </button>
+                            <button class="filter-btn" data-filter="electric">
+                                <i class="fas fa-bolt"></i>
+                                Electric Only
+                            </button>
+                            <button class="filter-btn" data-filter="premium">
+                                <i class="fas fa-crown"></i>
+                                Premium
+                            </button>
+                        </div>
+                    </div>
+                    <div class="nearby-stations">
+                        <h4>Nearby Stations</h4>
+                        <div class="station-list">
+                            <div class="station-item">
+                                <div class="station-info">
+                                    <h5>Connaught Place Hub</h5>
+                                    <span class="distance">0.2 km away</span>
+                                </div>
+                                <div class="station-status available">
+                                    <span class="bike-count">8</span>
+                                    <i class="fas fa-bicycle"></i>
+                                </div>
+                            </div>
+                            <div class="station-item">
+                                <div class="station-info">
+                                    <h5>Khan Market Station</h5>
+                                    <span class="distance">0.8 km away</span>
+                                </div>
+                                <div class="station-status available">
+                                    <span class="bike-count">5</span>
+                                    <i class="fas fa-bicycle"></i>
+                                </div>
+                            </div>
+                            <div class="station-item">
+                                <div class="station-info">
+                                    <h5>India Gate Point</h5>
+                                    <span class="distance">1.2 km away</span>
+                                </div>
+                                <div class="station-status busy">
+                                    <span class="bike-count">2</span>
+                                    <i class="fas fa-bicycle"></i>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="legend">
+                        <h4>Legend</h4>
+                        <div class="legend-items">
+                            <div class="legend-item">
+                                <div class="legend-color available"></div>
+                                <span>Available (5+ bikes)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color busy"></div>
+                                <span>Limited (1-4 bikes)</span>
+                            </div>
+                            <div class="legend-item">
+                                <div class="legend-color unavailable"></div>
+                                <span>No bikes available</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Premium Bikes Section -->
+    <section id="bikes" class="bikes-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Our Premium Fleet</h2>
+                <p>Choose from our carefully curated collection of premium bikes</p>
+            </div>
+            
+            <!-- Bike Categories -->
+            <div class="bike-categories" data-aos="fade-up">
+                <button class="category-btn active" data-category="all">
+                    <i class="fas fa-bicycle"></i>
+                    All Bikes
+                </button>
+                <button class="category-btn" data-category="electric">
+                    <i class="fas fa-bolt"></i>
+                    Electric
+                </button>
+                <button class="category-btn" data-category="mountain">
+                    <i class="fas fa-mountain"></i>
+                    Mountain
+                </button>
+                <button class="category-btn" data-category="city">
+                    <i class="fas fa-city"></i>
+                    City
+                </button>
+                <button class="category-btn" data-category="premium">
+                    <i class="fas fa-crown"></i>
+                    Premium
+                </button>
+            </div>
+
+            <div class="bikes-grid">
+                <!-- Electric Bike 1 -->
+                <div class="bike-card premium electric" data-aos="fade-up" data-aos-delay="100">
+                    <div class="bike-badges">
+                        <div class="premium-badge">
+                            <i class="fas fa-crown"></i>
+                            Premium
+                        </div>
+                        <div class="new-badge">New</div>
+                    </div>
+                    <div class="bike-image">
+                        <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400&h=300&fit=crop" alt="Tesla E-Bike Pro" class="bike-img">
+                        <div class="bike-status available">
+                            <i class="fas fa-check-circle"></i>
+                            Available Now
+                        </div>
+                        <div class="quick-view" onclick="openQuickView('Tesla E-Bike Pro')">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="bike-info">
+                        <div class="bike-header">
+                            <h3>Tesla E-Bike Pro</h3>
+                            <div class="bike-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(4.9)</span>
+                            </div>
+                        </div>
+                        <div class="bike-features">
+                            <div class="feature-item">
+                                <i class="fas fa-battery-full"></i>
+                                <span>120km Range</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-tachometer-alt"></i>
+                                <span>50 km/h Max</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>Smart Lock</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Anti-theft</span>
+                            </div>
+                        </div>
+                        <div class="bike-price">
+                            <div class="price-main">
+                                <span class="currency">₹</span>
+                                <span class="amount">399</span>
+                                <span class="period">/day</span>
+                            </div>
+                            <div class="price-original">₹499</div>
+                            <div class="discount-badge">20% OFF</div>
+                        </div>
+                        <div class="bike-actions">
+                            <button class="btn-rent" onclick="openBookingModal('Tesla E-Bike Pro')">
+                                <i class="fas fa-bolt"></i>
+                                Rent Now
+                            </button>
+                            <button class="btn-wishlist" onclick="addToWishlist('Tesla E-Bike Pro')">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mountain Bike -->
+                <div class="bike-card mountain" data-aos="fade-up" data-aos-delay="200">
+                    <div class="bike-badges">
+                        <div class="popular-badge">
+                            <i class="fas fa-fire"></i>
+                            Most Popular
+                        </div>
+                    </div>
+                    <div class="bike-image">
+                        <img src="https://images.unsplash.com/photo-1544191696-15693072f5e8?w=400&h=300&fit=crop" alt="Mountain Beast X7" class="bike-img">
+                        <div class="bike-status available">
+                            <i class="fas fa-check-circle"></i>
+                            5 Available
+                        </div>
+                        <div class="quick-view" onclick="openQuickView('Mountain Beast X7')">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="bike-info">
+                        <div class="bike-header">
+                            <h3>Mountain Beast X7</h3>
+                            <div class="bike-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-count">(4.7)</span>
+                            </div>
+                        </div>
+                        <div class="bike-features">
+                            <div class="feature-item">
+                                <i class="fas fa-cogs"></i>
+                                <span>27 Speed Gears</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield-alt"></i>
+                                <span>Full Suspension</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-location-arrow"></i>
+                                <span>GPS Tracking</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-tools"></i>
+                                <span>Tool Kit</span>
+                            </div>
+                        </div>
+                        <div class="bike-price">
+                            <div class="price-main">
+                                <span class="currency">₹</span>
+                                <span class="amount">249</span>
+                                <span class="period">/day</span>
+                            </div>
+                            <div class="price-original">₹299</div>
+                            <div class="discount-badge">15% OFF</div>
+                        </div>
+                        <div class="bike-actions">
+                            <button class="btn-rent" onclick="openBookingModal('Mountain Beast X7')">
+                                <i class="fas fa-mountain"></i>
+                                Rent Now
+                            </button>
+                            <button class="btn-wishlist" onclick="addToWishlist('Mountain Beast X7')">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- City Bike -->
+                <div class="bike-card city premium" data-aos="fade-up" data-aos-delay="300">
+                    <div class="bike-badges">
+                        <div class="eco-badge">
+                            <i class="fas fa-leaf"></i>
+                            Eco Friendly
+                        </div>
+                    </div>
+                    <div class="bike-image">
+                        <img src="https://images.unsplash.com/photo-1502744688674-c619d1586c9e?w=400&h=300&fit=crop" alt="Urban Cruiser Elite" class="bike-img">
+                        <div class="bike-status limited">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Only 2 Left
+                        </div>
+                        <div class="quick-view" onclick="openQuickView('Urban Cruiser Elite')">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="bike-info">
+                        <div class="bike-header">
+                            <h3>Urban Cruiser Elite</h3>
+                            <div class="bike-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(5.0)</span>
+                            </div>
+                        </div>
+                        <div class="bike-features">
+                            <div class="feature-item">
+                                <i class="fas fa-leaf"></i>
+                                <span>Zero Emission</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-wifi"></i>
+                                <span>IoT Connected</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-headphones"></i>
+                                <span>Bluetooth Audio</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-mobile-alt"></i>
+                                <span>App Control</span>
+                            </div>
+                        </div>
+                        <div class="bike-price">
+                            <div class="price-main">
+                                <span class="currency">₹</span>
+                                <span class="amount">199</span>
+                                <span class="period">/day</span>
+                            </div>
+                            <div class="price-original">₹249</div>
+                            <div class="discount-badge">20% OFF</div>
+                        </div>
+                        <div class="bike-actions">
+                            <button class="btn-rent" onclick="openBookingModal('Urban Cruiser Elite')">
+                                <i class="fas fa-city"></i>
+                                Rent Now
+                            </button>
+                            <button class="btn-wishlist" onclick="addToWishlist('Urban Cruiser Elite')">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Hybrid Bike -->
+                <div class="bike-card electric" data-aos="fade-up" data-aos-delay="400">
+                    <div class="bike-badges">
+                        <div class="new-badge">New Arrival</div>
+                    </div>
+                    <div class="bike-image">
+                        <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=400&h=300&fit=crop" alt="Hybrid Power Max" class="bike-img">
+                        <div class="bike-status available">
+                            <i class="fas fa-check-circle"></i>
+                            Available Now
+                        </div>
+                        <div class="quick-view" onclick="openQuickView('Hybrid Power Max')">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="bike-info">
+                        <div class="bike-header">
+                            <h3>Hybrid Power Max</h3>
+                            <div class="bike-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-count">(4.8)</span>
+                            </div>
+                        </div>
+                        <div class="bike-features">
+                            <div class="feature-item">
+                                <i class="fas fa-battery-three-quarters"></i>
+                                <span>80km Range</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-bicycle"></i>
+                                <span>Pedal Assist</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-weight-hanging"></i>
+                                <span>Lightweight</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-cloud"></i>
+                                <span>Weather Proof</span>
+                            </div>
+                        </div>
+                        <div class="bike-price">
+                            <div class="price-main">
+                                <span class="currency">₹</span>
+                                <span class="amount">299</span>
+                                <span class="period">/day</span>
+                            </div>
+                            <div class="price-original">₹359</div>
+                            <div class="discount-badge">17% OFF</div>
+                        </div>
+                        <div class="bike-actions">
+                            <button class="btn-rent" onclick="openBookingModal('Hybrid Power Max')">
+                                <i class="fas fa-bolt"></i>
+                                Rent Now
+                            </button>
+                            <button class="btn-wishlist" onclick="addToWishlist('Hybrid Power Max')">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Sports Bike -->
+                <div class="bike-card premium" data-aos="fade-up" data-aos-delay="500">
+                    <div class="bike-badges">
+                        <div class="premium-badge">
+                            <i class="fas fa-crown"></i>
+                            Premium
+                        </div>
+                        <div class="exclusive-badge">Limited Edition</div>
+                    </div>
+                    <div class="bike-image">
+                        <img src="https://images.unsplash.com/photo-1485965120184-e220f721d03e?w=400&h=300&fit=crop" alt="Sport Racer Pro" class="bike-img">
+                        <div class="bike-status available">
+                            <i class="fas fa-check-circle"></i>
+                            Available Now
+                        </div>
+                        <div class="quick-view" onclick="openQuickView('Sport Racer Pro')">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="bike-info">
+                        <div class="bike-header">
+                            <h3>Sport Racer Pro</h3>
+                            <div class="bike-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                </div>
+                                <span class="rating-count">(5.0)</span>
+                            </div>
+                        </div>
+                        <div class="bike-features">
+                            <div class="feature-item">
+                                <i class="fas fa-rocket"></i>
+                                <span>High Performance</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-wind"></i>
+                                <span>Aerodynamic</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-stopwatch"></i>
+                                <span>Racing Mode</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-award"></i>
+                                <span>Pro Grade</span>
+                            </div>
+                        </div>
+                        <div class="bike-price">
+                            <div class="price-main">
+                                <span class="currency">₹</span>
+                                <span class="amount">499</span>
+                                <span class="period">/day</span>
+                            </div>
+                            <div class="price-original">₹599</div>
+                            <div class="discount-badge">17% OFF</div>
+                        </div>
+                        <div class="bike-actions">
+                            <button class="btn-rent" onclick="openBookingModal('Sport Racer Pro')">
+                                <i class="fas fa-rocket"></i>
+                                Rent Now
+                            </button>
+                            <button class="btn-wishlist" onclick="addToWishlist('Sport Racer Pro')">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Family Bike -->
+                <div class="bike-card city" data-aos="fade-up" data-aos-delay="600">
+                    <div class="bike-badges">
+                        <div class="family-badge">
+                            <i class="fas fa-users"></i>
+                            Family Friendly
+                        </div>
+                    </div>
+                    <div class="bike-image">
+                        <img src="https://images.unsplash.com/photo-1502744688674-c619d1586c9e?w=400&h=300&fit=crop" alt="Family Comfort Ride" class="bike-img">
+                        <div class="bike-status available">
+                            <i class="fas fa-check-circle"></i>
+                            8 Available
+                        </div>
+                        <div class="quick-view" onclick="openQuickView('Family Comfort Ride')">
+                            <i class="fas fa-eye"></i>
+                            Quick View
+                        </div>
+                    </div>
+                    <div class="bike-info">
+                        <div class="bike-header">
+                            <h3>Family Comfort Ride</h3>
+                            <div class="bike-rating">
+                                <div class="stars">
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="fas fa-star"></i>
+                                    <i class="far fa-star"></i>
+                                </div>
+                                <span class="rating-count">(4.6)</span>
+                            </div>
+                        </div>
+                        <div class="bike-features">
+                            <div class="feature-item">
+                                <i class="fas fa-baby"></i>
+                                <span>Child Seat</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shopping-basket"></i>
+                                <span>Storage Basket</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-shield"></i>
+                                <span>Safety First</span>
+                            </div>
+                            <div class="feature-item">
+                                <i class="fas fa-heart"></i>
+                                <span>Comfortable</span>
+                            </div>
+                        </div>
+                        <div class="bike-price">
+                            <div class="price-main">
+                                <span class="currency">₹</span>
+                                <span class="amount">179</span>
+                                <span class="period">/day</span>
+                            </div>
+                            <div class="price-original">₹219</div>
+                            <div class="discount-badge">18% OFF</div>
+                        </div>
+                        <div class="bike-actions">
+                            <button class="btn-rent" onclick="openBookingModal('Family Comfort Ride')">
+                                <i class="fas fa-users"></i>
+                                Rent Now
+                            </button>
+                            <button class="btn-wishlist" onclick="addToWishlist('Family Comfort Ride')">
+                                <i class="far fa-heart"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Load More Button -->
+            <div class="load-more-section" data-aos="fade-up">
+                <button class="btn-load-more" onclick="loadMoreBikes()">
+                    <i class="fas fa-plus"></i>
+                    Load More Bikes
+                </button>
+                <p>Showing 6 of 50+ premium bikes available</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Smart Features Section -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Smart Technology Features</h2>
+                <p>Experience the future of bike rental with our cutting-edge technology</p>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-icon">
+                        <i class="fas fa-qrcode"></i>
+                    </div>
+                    <h3>QR Code Unlock</h3>
+                    <p>Instant bike unlock with QR code scanning. No keys, no hassle, just scan and ride.</p>
+                    <div class="feature-demo">
+                        <button class="demo-btn" onclick="demoQRUnlock()">
+                            <i class="fas fa-play"></i>
+                            Try Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-icon">
+                        <i class="fas fa-satellite-dish"></i>
+                    </div>
+                    <h3>Real-time GPS Tracking</h3>
+                    <p>Track your bike location and route history with advanced GPS technology and analytics.</p>
+                    <div class="feature-demo">
+                        <button class="demo-btn" onclick="demoGPSTracking()">
+                            <i class="fas fa-play"></i>
+                            View Live Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-icon">
+                        <i class="fas fa-brain"></i>
+                    </div>
+                    <h3>AI Route Optimization</h3>
+                    <p>Smart route suggestions based on traffic, weather, and your riding preferences.</p>
+                    <div class="feature-demo">
+                        <button class="demo-btn" onclick="demoAIRoute()">
+                            <i class="fas fa-play"></i>
+                            See AI in Action
+                        </button>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Anti-theft Protection</h3>
+                    <p>Advanced security system with instant alerts, remote locking, and theft recovery.</p>
+                    <div class="feature-demo">
+                        <button class="demo-btn" onclick="demoSecurityFeatures()">
+                            <i class="fas fa-play"></i>
+                            Security Demo
+                        </button>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="500">
+                    <div class="feature-icon">
+                        <i class="fas fa-mobile-alt"></i>
+                    </div>
+                    <h3>Smart Mobile App</h3>
+                    <p>Complete bike management, ride analytics, payments, and social features in one app.</p>
+                    <div class="feature-demo">
+                        <button class="demo-btn" onclick="demoMobileApp()">
+                            <i class="fas fa-download"></i>
+                            Download App
+                        </button>
+                    </div>
+                </div>
+                <div class="feature-card" data-aos="fade-up" data-aos-delay="600">
+                    <div class="feature-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Fitness Analytics</h3>
+                    <p>Track your fitness progress, calories burned, CO2 saved, and set riding goals.</p>
+                    <div class="feature-demo">
+                        <button class="demo-btn" onclick="demoFitnessAnalytics()">
+                            <i class="fas fa-chart-bar"></i>
+                            View Analytics
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing Section -->
+    <section id="pricing" class="pricing-section">
+        <div class="container">
+            <div class="section-header" data-aos="fade-up">
+                <h2>Flexible Pricing Plans</h2>
+                <p>Choose the perfect plan that fits your riding needs and budget</p>
+            </div>
+            <div class="pricing-toggle" data-aos="fade-up">
+                <span class="toggle-label">Hourly</span>
+                <label class="toggle-switch">
+                    <input type="checkbox" id="pricing-toggle">
+                    <span class="toggle-slider"></span>
+                </label>
+                <span class="toggle-label">Monthly</span>
+                <div class="save-badge">Save 40%</div>
+            </div>
+            <div class="pricing-grid">
+                <div class="pricing-card basic" data-aos="fade-up" data-aos-delay="100">
+                    <div class="plan-header">
+                        <h3>Basic Plan</h3>
+                        <p>Perfect for occasional riders</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">₹</span>
+                        <span class="amount hourly">25</span>
+                        <span class="amount monthly" style="display:none">699</span>
+                        <span class="period hourly">/hour</span>
+                        <span class="period monthly" style="display:none">/month</span>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>City bikes access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Basic GPS tracking</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Mobile app support</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>24/7 customer support</span>
+                        </div>
+                        <div class="feature-item disabled">
+                            <i class="fas fa-times"></i>
+                            <span>Premium bikes</span>
+                        </div>
+                    </div>
+                    <button class="plan-btn" onclick="selectPlan('basic')">
+                        Choose Basic
+                    </button>
+                </div>
+
+                <div class="pricing-card premium popular" data-aos="fade-up" data-aos-delay="200">
+                    <div class="popular-badge">
+                        <i class="fas fa-crown"></i>
+                        Most Popular
+                    </div>
+                    <div class="plan-header">
+                        <h3>Premium Plan</h3>
+                        <p>Best value for regular riders</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">₹</span>
+                        <span class="amount hourly">45</span>
+                        <span class="amount monthly" style="display:none">1299</span>
+                        <span class="period hourly">/hour</span>
+                        <span class="period monthly" style="display:none">/month</span>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>All bike types access</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced GPS & analytics</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Priority booking</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Free helmet & accessories</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Insurance included</span>
+                        </div>
+                    </div>
+                    <button class="plan-btn" onclick="selectPlan('premium')">
+                        Choose Premium
+                    </button>
+                </div>
+
+                <div class="pricing-card enterprise" data-aos="fade-up" data-aos-delay="300">
+                    <div class="plan-header">
+                        <h3>Enterprise Plan</h3>
+                        <p>Perfect for businesses & teams</p>
+                    </div>
+                    <div class="plan-price">
+                        <span class="currency">₹</span>
+                        <span class="amount hourly">75</span>
+                        <span class="amount monthly" style="display:none">1999</span>
+                        <span class="period hourly">/hour</span>
+                        <span class="period monthly" style="display:none">/month</span>
+                    </div>
+                    <div class="plan-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Everything in Premium</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Fleet management</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Custom branding</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Advanced analytics</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span>Dedicated support</span>
+                        </div>
+                    </div>
+                    <button class="plan-btn" onclick="selectPlan('enterprise')">
+                        Choose Enterprise
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Booking Modal -->
+    <div id="bookingModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeBookingModal()">&times;</span>
+            <div class="modal-header">
+                <h2>Complete Your Booking</h2>
+                <p>Just a few details and you're ready to ride!</p>
+            </div>
+            <form id="bookingForm">
+                <div class="booking-progress">
+                    <div class="progress-step active">
+                        <div class="step-number">1</div>
+                        <span>Details</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">2</div>
+                        <span>Payment</span>
+                    </div>
+                    <div class="progress-step">
+                        <div class="step-number">3</div>
+                        <span>Confirm</span>
+                    </div>
+                </div>
+
+                <div class="booking-step active" id="step-1">
+                    <div class="selected-bike-info">
+                        <div class="bike-preview">
+                            <img src="https://images.unsplash.com/photo-1571068316344-75bc76f77890?w=100&h=80&fit=crop" alt="Selected Bike" id="selectedBikeImage">
+                            <div class="bike-details">
+                                <h4 id="selectedBikeName">Tesla E-Bike Pro</h4>
+                                <p id="selectedBikeFeatures">Electric • GPS • Smart Lock</p>
+                            </div>
+                        </div>
+                        <div class="bike-price-preview">
+                            <span class="price" id="selectedBikePrice">₹399/day</span>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Personal Information</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Full Name</label>
+                                <input type="text" name="fullName" required placeholder="Enter your full name">
+                            </div>
+                            <div class="form-group">
+                                <label>Phone Number</label>
+                                <input type="tel" name="phone" required placeholder="+91 9876543210">
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Email Address</label>
+                                <input type="email" name="email" required placeholder="your.email@example.com">
+                            </div>
+                            <div class="form-group">
+                                <label>Date of Birth</label>
+                                <input type="date" name="dob" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>Rental Details</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Pickup Location</label>
+                                <select name="pickupLocation" required>
+                                    <option value="">Select pickup location</option>
+                                    <option>Delhi - Connaught Place</option>
+                                    <option>Mumbai - Bandra West</option>
+                                    <option>Bangalore - MG Road</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>Rental Duration</label>
+                                <select name="duration" id="duration" onchange="calculatePrice()" required>
+                                    <option value="1">1 Day</option>
+                                    <option value="3">3 Days</option>
+                                    <option value="7">1 Week</option>
+                                    <option value="30">1 Month</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Pickup Date & Time</label>
+                                <input type="datetime-local" name="pickupDateTime" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Return Date & Time</label>
+                                <input type="datetime-local" name="returnDateTime" required readonly>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="form-section">
+                        <h3>ID Verification</h3>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>ID Type</label>
+                                <select name="idType" required>
+                                    <option value="">Select ID type</option>
+                                    <option>Aadhaar Card</option>
+                                    <option>Driving License</option>
+                                    <option>Passport</option>
+                                    <option>Voter ID</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>ID Number</label>
+                                <input type="text" name="idNumber" required placeholder="Enter ID number">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-next" onclick="nextStep()">
+                            Continue to Payment
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="booking-step" id="step-2">
+                    <div class="form-section">
+                        <h3>Payment Method</h3>
+                        <div class="payment-methods">
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="card" checked>
+                                <div class="method-info">
+                                    <i class="fas fa-credit-card"></i>
+                                    <span>Credit/Debit Card</span>
+                                </div>
+                                <i class="fas fa-check"></i>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="upi">
+                                <div class="method-info">
+                                    <i class="fab fa-google-pay"></i>
+                                    <span>UPI Payment</span>
+                                </div>
+                                <i class="fas fa-check"></i>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="wallet">
+                                <div class="method-info">
+                                    <i class="fas fa-wallet"></i>
+                                    <span>Digital Wallet</span>
+                                </div>
+                                <i class="fas fa-check"></i>
+                            </label>
+                            <label class="payment-method">
+                                <input type="radio" name="payment" value="emi">
+                                <div class="method-info">
+                                    <i class="fas fa-calendar-alt"></i>
+                                    <span>EMI Options</span>
+                                </div>
+                                <i class="fas fa-check"></i>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="payment-details" id="cardDetails">
+                        <h3>Card Details</h3>
+                        <div class="card-input">
+                            <label>Card Number</label>
+                            <input type="text" placeholder="1234 5678 9012 3456" maxlength="19">
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label>Expiry Date</label>
+                                <input type="text" placeholder="MM/YY" maxlength="5">
+                            </div>
+                            <div class="form-group">
+                                <label>CVV</label>
+                                <input type="text" placeholder="123" maxlength="3">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label>Cardholder Name</label>
+                            <input type="text" placeholder="Name on card">
+                        </div>
+                    </div>
+
+                    <div class="booking-summary">
+                        <h3>Booking Summary</h3>
+                        <div class="summary-item">
+                            <span>Base Price (1 day)</span>
+                            <span id="basePrice">₹399</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Duration</span>
+                            <span id="durationText">1 day</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Subtotal</span>
+                            <span id="subtotal">₹399</span>
+                        </div>
+                        <div class="summary-item discount">
+                            <span>First-time user discount</span>
+                            <span id="discount">-₹50</span>
+                        </div>
+                        <div class="summary-item">
+                            <span>Insurance & Taxes</span>
+                            <span id="taxes">₹29</span>
+                        </div>
+                        <div class="summary-total">
+                            <span>Total Amount</span>
+                            <span id="totalAmount">₹378</span>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-back" onclick="prevStep()">
+                            <i class="fas fa-arrow-left"></i>
+                            Back
+                        </button>
+                        <button type="button" class="btn-next" onclick="nextStep()">
+                            Review Booking
+                            <i class="fas fa-arrow-right"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <div class="booking-step" id="step-3">
+                    <div class="confirmation-details">
+                        <div class="confirmation-header">
+                            <i class="fas fa-check-circle"></i>
+                            <h3>Review Your Booking</h3>
+                            <p>Please review all details before confirming</p>
+                        </div>
+
+                        <div class="confirmation-sections">
+                            <div class="confirmation-section">
+                                <h4>Bike Details</h4>
+                                <div class="detail-item">
+                                    <span>Bike Model:</span>
+                                    <span id="confirmBikeName">Tesla E-Bike Pro</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Daily Rate:</span>
+                                    <span id="confirmDailyRate">₹399</span>
+                                </div>
+                            </div>
+
+                            <div class="confirmation-section">
+                                <h4>Rental Period</h4>
+                                <div class="detail-item">
+                                    <span>Duration:</span>
+                                    <span id="confirmDuration">1 day</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Pickup:</span>
+                                    <span id="confirmPickup">Delhi - Connaught Place</span>
+                                </div>
+                            </div>
+
+                            <div class="confirmation-section">
+                                <h4>Payment</h4>
+                                <div class="detail-item">
+                                    <span>Method:</span>
+                                    <span id="confirmPayment">Credit Card</span>
+                                </div>
+                                <div class="detail-item">
+                                    <span>Total Amount:</span>
+                                    <span id="confirmTotal">₹378</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="terms-agreement">
+                            <label class="checkbox-container">
+                                <input type="checkbox" required>
+                                <span class="checkmark"></span>
+                                I agree to the <a href="#" onclick="openTerms()">Terms & Conditions</a> and <a href="#" onclick="openPrivacy()">Privacy Policy</a>
+                            </label>
+                        </div>
+                    </div>
+
+                    <div class="step-actions">
+                        <button type="button" class="btn-back" onclick="prevStep()">
+                            <i class="fas fa-arrow-left"></i>
+                            Back
+                        </button>
+                        <button type="submit" class="btn-book">
+                            <i class="fas fa-lock"></i>
+                            Confirm & Pay ₹378
+                        </button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">
+                        <i class="fas fa-bicycle"></i>
+                        <span>RideNova</span>
+                    </div>
+                    <p>Revolutionizing urban mobility with premium bike rentals, smart technology, and unmatched convenience.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link">
+                            <i class="fab fa-facebook-f"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-twitter"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-instagram"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-linkedin-in"></i>
+                        </a>
+                        <a href="#" class="social-link">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </div>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#bikes">Our Bikes</a></li>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#about">About Us</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Services</h3>
+                    <ul>
+                        <li><a href="#">Bike Rentals</a></li>
+                        <li><a href="#">Corporate Plans</a></li>
+                        <li><a href="#">Insurance</a></li>
+                        <li><a href="#">Maintenance</a></li>
+                        <li><a href="#">24/7 Support</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Support</h3>
+                    <ul>
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Safety Guidelines</a></li>
+                        <li><a href="#">Terms of Service</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="#">Refund Policy</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Contact Info</h3>
+                    <div class="contact-info">
+                        <div class="contact-item">
+                            <i class="fas fa-phone"></i>
+                            <span>+91 9999-888-777</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>hello@RideNova.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>Available in 150+ cities</span>
+                        </div>
+                    </div>
+                    <div class="app-downloads">
+                        <h4>Download Our App</h4>
+                        <div class="download-buttons">
+                            <a href="#" class="download-btn">
+                                <i class="fab fa-apple"></i>
+                                <div>
+                                    <span class="small">Download on the</span>
+                                    <span class="large">App Store</span>
+                                </div>
+                            </a>
+                            <a href="#" class="download-btn">
+                                <i class="fab fa-google-play"></i>
+                                <div>
+                                    <span class="small">Get it on</span>
+                                    <span class="large">Google Play</span>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <div class="footer-bottom-content">
+                    <p>&copy; 2024 RideNova. All rights reserved. | Made with ❤️ for urban mobility</p>
+                    <div class="footer-links">
+                        <a href="#">Privacy</a>
+                        <a href="#">Terms</a>
+                        <a href="#">Cookies</a>
+                        <a href="#">Accessibility</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Floating Action Button -->
+    <div class="fab-container">
+        <button class="fab-main" onclick="toggleFAB()">
+            <i class="fas fa-plus"></i>
+        </button>
+        <div class="fab-options">
+            <button class="fab-option" onclick="openBookingModal()" title="Quick Book">
+                <i class="fas fa-bicycle"></i>
+            </button>
+            <button class="fab-option" onclick="openChat()" title="Chat Support">
+                <i class="fas fa-comments"></i>
+            </button>
+            <button class="fab-option" onclick="openEmergency()" title="Emergency">
+                <i class="fas fa-phone"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Chat Widget -->
+    <div id="chatWidget" class="chat-widget">
+        <div class="chat-header">
+            <div class="chat-avatar">
+                <i class="fas fa-robot"></i>
+            </div>
+            <div class="chat-info">
+                <h4>RideNova Assistant</h4>
+                <span class="status">Online</span>
+            </div>
+            <button class="chat-close" onclick="closeChat()">
+                <i class="fas fa-times"></i>
+            </button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message bot">
+                <div class="message-avatar">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="message-content">
+                    <p>Hi! I'm your RideNova assistant. How can I help you today?</p>
+                    <span class="message-time">Just now</span>
+                </div>
+            </div>
+        </div>
+        <div class="chat-input">
+            <input type="text" id="chatInput" placeholder="Type your message..." onkeypress="handleChatInput(event)">
+            <button onclick="sendMessage()">
+                <i class="fas fa-paper-plane"></i>
+            </button>
+        </div>
+    </div>
+
+    <!-- Notification Container -->
+    <div id="notificationContainer" class="notification-container"></div>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <script src="script.js"></script>
+    <footer style="text-align:center; padding:20px; background:#222; color:white;">
+    <p>© 2026 RideNova | Developed by Akash Maurya</p>
+</footer>
+</body>
+</html>
