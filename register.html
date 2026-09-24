@@ -1,63 +1,77 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>RideNova - Register</title>
+    <title>RideNova - Create Account</title>
 
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="login-container">
+    <div class="login-page">
 
-        <h1>RideNova</h1>
-        <h2>Create Account</h2>
+        <div class="login-card">
 
-        <form id="registerForm">
+            <div class="login-logo">
+                🚲 RideNova
+            </div>
 
-            <input
-                type="text"
-                id="registerName"
-                placeholder="Enter your name"
-                required
-            >
+            <p class="login-subtitle">
+                Smart Bike Rental Platform
+            </p>
 
-            <input
-                type="email"
-                id="registerEmail"
-                placeholder="Enter your email"
-                required
-            >
+            <h2>Create Account</h2>
 
-            <input
-                type="password"
-                id="registerPassword"
-                placeholder="Create password"
-                required
-            >
+            <form id="registerForm">
 
-            <input
-                type="password"
-                id="confirmPassword"
-                placeholder="Confirm password"
-                required
-            >
+                <input
+                    type="text"
+                    id="registerName"
+                    placeholder="Enter your full name"
+                    required
+                >
 
-            <button type="submit">Create Account</button>
+                <input
+                    type="email"
+                    id="registerEmail"
+                    placeholder="Enter your email"
+                    required
+                >
 
-        </form>
+                <input
+                    type="password"
+                    id="registerPassword"
+                    placeholder="Create password"
+                    required
+                >
 
-        <p>
-            Already have an account?
-            <a href="login.html">Login</a>
-        </p>
+                <input
+                    type="password"
+                    id="confirmPassword"
+                    placeholder="Confirm password"
+                    required
+                >
 
-        <p>
-            <a href="index.html">← Back to Home</a>
-        </p>
+                <button type="submit" class="login-btn">
+                    Create Account
+                </button>
+
+            </form>
+
+            <p>
+                Already have an account?
+                <a href="login.html">Login</a>
+            </p>
+
+            <a href="index.html" class="back-home">
+                ← Back to RideNova
+            </a>
+
+        </div>
 
     </div>
 
