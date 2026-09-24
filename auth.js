@@ -69,4 +69,5 @@ if (loginForm) {
 
         }
     });
+}
 
