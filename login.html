@@ -1,36 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>RideNova - Login</title>
+
     <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
-    <div class="login-container">
-        <h1>RideNova</h1>
-        <h2>Login</h2>
+    <div class="login-page">
 
-        <form id="loginForm">
-            <input type="email" id="loginEmail"
-                   placeholder="Enter your email" required>
+        <div class="login-card">
 
-            <input type="password" id="loginPassword"
-                   placeholder="Enter your password" required>
+            <div class="login-logo">
+                🚲 RideNova
+            </div>
 
-            <button type="submit">Login</button>
-        </form>
+            <p class="login-subtitle">
+                Smart Bike Rental Platform
+            </p>
 
-        <p>
-            Don't have an account?
-            <a href="register.html">Create Account</a>
-        </p>
+            <h2>Welcome Back!</h2>
 
-        <p>
-            <a href="index.html">← Back to Home</a>
-        </p>
+            <form id="loginForm">
+
+                <input
+                    type="email"
+                    id="loginEmail"
+                    placeholder="Enter your email"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="loginPassword"
+                    placeholder="Enter your password"
+                    required
+                >
+
+                <button type="submit" class="login-btn">
+                    Login
+                </button>
+
+            </form>
+
+            <p>
+                Don't have an account?
+                <a href="register.html">Sign Up</a>
+            </p>
+
+            <a href="index.html" class="back-home">
+                ← Back to RideNova
+            </a>
+
+        </div>
+
     </div>
 
     <script src="auth.js"></script>
