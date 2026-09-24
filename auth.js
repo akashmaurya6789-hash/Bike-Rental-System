@@ -1,36 +1,85 @@
-// REGISTER
+document.addEventListener("DOMContentLoaded", function () {
 
-const registerForm = document.getElementById("registerForm");
+    // =========================
+    // REGISTER
+    // =========================
 
-if (registerForm) {
+    const registerForm = document.getElementById("registerForm");
 
-    registerForm.addEventListener("submit", function(event) {
+    if (registerForm) {
 
-        event.preventDefault();
+        registerForm.addEventListener("submit", function (event) {
 
-        const name = document.getElementById("registerName").value;
-        const email = document.getElementById("registerEmail").value;
-        const password = document.getElementById("registerPassword").value;
-        const confirmPassword = document.getElementById("confirmPassword").value;
+            event.preventDefault();
 
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
-            return;
-        }
+            const name = document.getElementById("registerName").value.trim();
+            const email = document.getElementById("registerEmail").value.trim();
+            const password = document.getElementById("registerPassword").value;
+            const confirmPassword = document.getElementById("confirmPassword").value;
 
-        const user = {
-            name: name,
-            email: email,
-            password: password
-        };
+            if (password !== confirmPassword) {
+                alert("Passwords do not match!");
+                return;
+            }
 
-        localStorage.setItem("rideNovaUser", JSON.stringify(user));
+            const user = {
+                name: name,
+                email: email,
+                password: password
+            };
 
-        alert("Account created successfully!");
+            // Store user data
+            localStorage.setItem("rideNovaUser", JSON.stringify(user));
 
-        window.location.href = "login.html";
-    });
-}
+            alert("Account created successfully!");
+
+            window.location.href = "login.html";
+        });
+    }
+
+
+    // =========================
+    // LOGIN
+    // =========================
+
+    const loginForm = document.getElementById("loginForm");
+
+    if (loginForm) {
+
+        loginForm.addEventListener("submit", function (event) {
+
+            event.preventDefault();
+
+            const email = document.getElementById("loginEmail").value.trim();
+            const password = document.getElementById("loginPassword").value;
+
+            // Get registered user
+            const storedUser = localStorage.getItem("rideNovaUser");
+
+            if (!storedUser) {
+                alert("No account found. Please register first.");
+                return;
+            }
+
+            const user = JSON.parse(storedUser);
+
+            if (email === user.email && password === user.password) {
+
+                localStorage.setItem("isLoggedIn", "true");
+
+                alert("Login successful!");
+
+                window.location.href = "index.html";
+
+            } else {
+
+                alert("Invalid email or password!");
+
+            }
+        });
+    }
+
+});
 
 
 // LOGIN
