@@ -1737,3 +1737,22 @@ customStyles.textContent = `
     }
 `;
 document.head.appendChild(customStyles);
+
+// LOGIN CHECK FOR BOOKING
+
+
+function checkLoginAndBook() {
+
+    const isLoggedIn = localStorage.getItem("isLoggedIn");
+
+    if (isLoggedIn !== "true") {
+
+        alert("Please login first to book a bike.");
+
+        window.location.href = "login.html";
+
+        return;
+    }
+
+    alert("You are logged in. Booking can continue.");
+}
