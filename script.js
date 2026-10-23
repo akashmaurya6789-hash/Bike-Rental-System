@@ -1753,6 +1753,5 @@ function checkLoginAndBook() {
 
         return;
     }
-
-    alert("You are logged in. Booking can continue.");
+       openBookingModal();
 }
