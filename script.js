@@ -699,6 +699,24 @@ function setupPaymentMethods() {
             this.classList.add('selected');
         });
     });
+        const upiQrSection = document.getElementById('upiQrSection');
+
+    function toggleUpiQr() {
+        const selectedPayment = document.querySelector(
+            'input[name="payment"]:checked'
+        );
+
+        if (upiQrSection && selectedPayment) {
+            upiQrSection.style.display =
+                selectedPayment.value === 'upi' ? 'block' : 'none';
+        }
+    }
+
+    document.querySelectorAll('input[name="payment"]').forEach(input => {
+        input.addEventListener('change', toggleUpiQr);
+    });
+
+    toggleUpiQr();
 }
 
 function updateConfirmationDetails() {
